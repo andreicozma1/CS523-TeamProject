@@ -1,1 +1,1 @@
-# CS523 - Machine Learning - TeamProject
+# CS523 - Artificial Intelligence - TeamProject
