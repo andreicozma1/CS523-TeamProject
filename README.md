@@ -1,1 +1,1 @@
-# CS523-TeamProject
+# CS523 - Machine Learning - TeamProject
