@@ -5,7 +5,7 @@ The objective of the Milestone 1 (M1) is to submit a **one-page project proposal
 
 This milestone requires that your team successfully **identify a problem** you have chosen for your project. 
 
-## Requirements:
+## M1 Requirements:
   1. Your team must have the **instructor's permission** that a topic is suitable for the course. 
   2. Your team's setting must be **compliant with the constraints outlined above**. 
   3. Your team must submit a [**one-page document proposal**](CS523-Project-Proposal.tex), by the due date, that includes the following sections:
@@ -19,7 +19,7 @@ Note: Your report must be submitted by **11:59pm on October 26** via Canvas.
 # Milestone 2 - Final Report
 The objective of the Milestone 2 (M2) is submitting a final report based on your project, its implementation, and any findings related to your project. Your docment should be written with the AAAI 2020 Author Kit. It is advisable that your team write in LaTeX. The easiest way to collaborate on LaTeX documents is through Overleaf.
 
-## Requirements
+## M1 Requirements:
 [**Final Report**](CS523-Final-Report.tex): Your team must submit a document in the [**AAAI format**](https://www.aaai.org/Publications/Templates/AuthorKit20.zip), by the due date, that includes the following:
 Your document should include **six sections**:
 1. Introduction: Describe why your project matters. 
@@ -36,3 +36,14 @@ Note that it is perfectly permissible to re-use text from prior Milestone submis
 You may also be interested in several resources, such as:
 - [ShareLaTeX's Table Generator](https://www.tablesgenerator.com/)
 - Overleaf's [LaTeX Tools](https://www.overleaf.com/learn/latex/LaTeX_tools) list
+
+# Grading:
+This milestone is worth 20% of your final project grade. The 20% is calculated like so:
+
+1. **Proposal** 
+   1. written proposal exists with all required information. (2.5%)
+   2. Proposal is grammatically and structurally well-written. (2.5%)
+2. **Final Report** 
+   1. Report articulates all aspects of project effectively. (12.5%)
+   2. Report is grammatically and structurally well-written. (2.5%)
+
