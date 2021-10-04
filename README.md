@@ -21,7 +21,7 @@ This project is required for all students enrolled in COSC 523. It is optional f
      4. Describe a scenario for integrating intelligence (e.g., recommendations) into an interface. 
      5. Implement an interface prototype that demonstrates the concept. 
      6. Conduct an informal user study with the prototype aimed at understanding how the new interfaces changes the nature of the application area. 
-4. Prepare a **proposal**. Cite, at least, 5 or 6 **research papers** to motivate your project. 
+4. Prepare a [**proposal**](docs). Cite, at least, 5 or 6 [**research papers**](docs/research) to motivate your project. 
 5. Conduct an appropriate evaluation for your pathway. 
-6. Write a **final report** about your project, its implementation, and your findings. 
+6. Write a [**final report**](docs) about your project, its implementation, and your findings. 
 7. Undergraduate students can form terms of up to 3 people, but graduate students may form teams of two
