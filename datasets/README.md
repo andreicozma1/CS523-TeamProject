@@ -20,4 +20,16 @@
 - **engineSize**: size in litres.
 
 ## car-listing-2
-1. [1.2 Million Used Car Listings](https://www.kaggle.com/jpayne/852k-used-car-listings)
+- [1.2 Million Used Car Listings](https://www.kaggle.com/jpayne/852k-used-car-listings)
+
+### Data Description:
+- This data was acquired by scraping TrueCar.com for used car listings on 9/24/2017. 
+- Each row represents one used car listing. 
+- Data included:
+  - year 
+  - make 
+  - model 
+  - price 
+  - VIN 
+  - city 
+  - state
