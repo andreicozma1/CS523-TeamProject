@@ -19,7 +19,9 @@
    - Unsupervised Learning: https://scikit-learn.org/stable/unsupervised_learning.html
 
 ## Environment Details
-- Nvidia CUDA Toolkit: https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exe_local
+- Anaconda: https://docs.anaconda.com/anaconda/install/index.html
+- TensorFlow: https://www.tensorflow.org/install/gpu
+- NVIDIA CUDA Toolkit: https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exe_local
 - NVIDIA cuDNN: https://developer.nvidia.com/cudnn
   - Download: https://developer.nvidia.com/rdp/cudnn-download
   - The NVIDIA CUDA® Deep Neural Network library (cuDNN) is a GPU-accelerated library of primitives for deep neural networks. cuDNN provides highly tuned implementations for standard routines such as forward and backward convolution, pooling, normalization, and activation layers. 
