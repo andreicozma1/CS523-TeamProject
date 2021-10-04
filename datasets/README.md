@@ -8,5 +8,16 @@
 5. [Ford Used Car Listing](https://www.kaggle.com/mysarahmadbhat/ford-used-car-listing?select=ford.csv)
 6. [Hyundai Used Car Listing](https://www.kaggle.com/mysarahmadbhat/hyundai-used-car-listing?select=hyundi.csv)
 
+### Data Description:
+- **model**: make model. 
+- **year**: registration year. 
+- **price**: price in Euros. 
+- **transmission**: type of gear box. 
+- **mileage**: distance used. 
+- **fuelType**: engine fuel. 
+- **tax**: road tax. 
+- **mpg**: miles per gallon. 
+- **engineSize**: size in litres.
+
 ## car-listing-2
 1. [1.2 Million Used Car Listings](https://www.kaggle.com/jpayne/852k-used-car-listings)
