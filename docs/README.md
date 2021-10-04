@@ -21,7 +21,7 @@ Note: Your report must be submitted by **11:59pm on October 26** via Canvas.
 # Milestone 2 - Final Report
 The objective of the Milestone 2 (M2) is submitting a final report based on your project, its implementation, and any findings related to your project. Your docment should be written with the AAAI 2020 Author Kit. It is advisable that your team write in LaTeX. The easiest way to collaborate on LaTeX documents is through Overleaf.
 
-## M1 Requirements:
+## M2 Requirements:
 [**Final Report**](CS523-Final-Report.tex): Your team must submit a document in the [**AAAI format**](https://www.aaai.org/Publications/Templates/AuthorKit20.zip), by the due date, that includes the following:
 Your document should include **six sections**:
 1. Introduction: Describe why your project matters. 
