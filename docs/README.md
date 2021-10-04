@@ -1,4 +1,6 @@
 # Documents
+- [**Overleaf Project**](https://www.overleaf.com/project/615b26a8eed7265212674080)
+- TODO: Upload the completed documents to GitHub repo.
 
 # Milestone 1 - Project Proposal
 The objective of the Milestone 1 (M1) is to submit a **one-page project proposal**. Far too often, AI techniques and methods are applied to problem spaces that "don't matter". However, an important consideration for "what matters" is that it is inherently debatable. We make thousands of decisions each day that influence us in small, but meaningful ways. Project proposals should hone in one such decision.
