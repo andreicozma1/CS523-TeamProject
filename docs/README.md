@@ -1,8 +1,38 @@
 # Documents
 
 # Milestone 1 - Project Proposal
-- Prepare a [**proposal**](CS523-Project-Proposal.tex). 
-- Cite, at least, 5 or 6 [**research papers**](research) to motivate your project. 
+The objective of the Milestone 1 (M1) is to submit a **one-page project proposal**. Far too often, AI techniques and methods are applied to problem spaces that "don't matter". However, an important consideration for "what matters" is that it is inherently debatable. We make thousands of decisions each day that influence us in small, but meaningful ways. Project proposals should hone in one such decision.
+
+This milestone requires that your team successfully **identify a problem** you have chosen for your project. 
+
+## Requirements:
+  1. Your team must have the **instructor's permission** that a topic is suitable for the course. 
+  2. Your team's setting must be **compliant with the constraints outlined above**. 
+  3. Your team must submit a [**one-page document proposal**](CS523-Project-Proposal.tex), by the due date, that includes the following sections:
+     1. **Problem Description**: A clear articulation of the problem and the project pathway that the project falls under. 
+     2. **Problem Motivation**: A brief paragraph describing why the problem matters. 
+     3. **Planned Activities**: An overview of the activities that will take place during the project. 
+     4. NOTE: Cite, **at least**, 5 or 6 [**research papers**](research) to motivate your project. 
+
+Note: Your report must be submitted by **11:59pm on October 26** via Canvas.
 
 # Milestone 2 - Final Report
-- Write a [**final report**](CS523-Final-Report.tex) about your project, its implementation, and your findings. 
+The objective of the Milestone 2 (M2) is submitting a final report based on your project, its implementation, and any findings related to your project. Your docment should be written with the AAAI 2020 Author Kit. It is advisable that your team write in LaTeX. The easiest way to collaborate on LaTeX documents is through Overleaf.
+
+## Requirements
+[**Final Report**](CS523-Final-Report.tex): Your team must submit a document in the [**AAAI format**](https://www.aaai.org/Publications/Templates/AuthorKit20.zip), by the due date, that includes the following:
+Your document should include **six sections**:
+1. Introduction: Describe why your project matters. 
+2. Approach: Describe your approach. 
+3. Implementation: Describe your approach. 
+4. Evaluation: Describe your evaluation. 
+5. Future Work: Describe what could follow your work. 
+6. Contributions: Describe the contributions of each team member.
+The document should be, **at most, 8 pages** in length.
+
+Note: Your report must be submitted by **11:59pm on November 30** via Canvas.   
+Note that it is perfectly permissible to re-use text from prior Milestone submissions for this final report. You should aim to submit a report that is **well-written** and **clearly articulates all aspects** of your team's work.
+
+You may also be interested in several resources, such as:
+- [ShareLaTeX's Table Generator](https://www.tablesgenerator.com/)
+- Overleaf's [LaTeX Tools](https://www.overleaf.com/learn/latex/LaTeX_tools) list
