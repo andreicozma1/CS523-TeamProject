@@ -1,4 +1,4 @@
-model,year,price,transmission,mileage,fuelType,tax(£),mpg,engineSize
+model,year,price,transmission,mileage,fuelType,tax,mpg,engineSize
  I20,2017,7999,Manual,17307,Petrol,145,58.9,1.2
  Tucson,2016,14499,Automatic,25233,Diesel,235,43.5,2.0
  Tucson,2016,11399,Manual,37877,Diesel,30,61.7,1.7
