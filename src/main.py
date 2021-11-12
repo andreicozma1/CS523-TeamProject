@@ -21,105 +21,116 @@ from keras import metrics
 from keras import losses
 from keras import optimizers
 
-# tf.debugging.set_log_device_placement(True)
-# adjust values to your needs
-print('=' * 60)
 
-print('- TensorFlow version: {version}'.format(version=tf.__version__))
-print('- Eager mode enabled: {mode}'.format(mode=tf.executing_eagerly()))
+def print_info():
+    print('=' * 60)
 
-gpus = tf.config.list_physical_devices('GPU')
-print(f"- Num GPUs: {len(gpus)}")
-print(f'- GPUs: {gpus}')
-print('=' * 60)
-print()
+    print('- TensorFlow version: {version}'.format(version=tf.__version__))
+    print('- Eager mode enabled: {mode}'.format(mode=tf.executing_eagerly()))
 
-# get dataset files
-
-cars_listing_1_dir = '../datasets/car-listing-1'
-cars_listing_2_dir = '../datasets/car-listing-2'
+    gpus = tf.config.list_physical_devices('GPU')
+    print(f"- Num GPUs: {len(gpus)}")
+    print(f'- GPUs: {gpus}')
+    print('=' * 60)
+    print()
 
 
 def get_csvs_in_dir(dir_path):
     return [join(dir_path, f) for f in listdir(dir_path) if isfile(join(dir_path, f)) and f.endswith('.csv')]
 
 
-cars_1_files = get_csvs_in_dir(cars_listing_1_dir)
-cars_2_files = get_csvs_in_dir(cars_listing_2_dir)
+def read_dataset():
+    # get dataset files
+
+    cars_listing_1_dir = '../datasets/car-listing-1'
+    cars_listing_2_dir = '../datasets/car-listing-2'
+    cars_1_files = get_csvs_in_dir(cars_listing_1_dir)
+    cars_2_files = get_csvs_in_dir(cars_listing_2_dir)
+
+    # peek at cars 1 datasets
+    print('=' * 60)
+
+    print("# AUDI")
+    df_audi = pd.read_csv(cars_1_files[0])
+    print(df_audi.head())
+
+    print('=' * 60)
+
+    print("# BMW")
+    df_bmw = pd.read_csv(cars_1_files[1])
+    print(df_bmw.head())
+
+    print('=' * 60)
+
+    print("# FORD")
+    df_ford = pd.read_csv(cars_1_files[2])
+    print(df_ford.head())
+
+    print('=' * 60)
+
+    print("# HYUNDAI")
+    df_hyundi = pd.read_csv(cars_1_files[3])
+    print(df_hyundi.head())
+
+    print('=' * 60)
+
+    print("# MERCEDES")
+    df_merc = pd.read_csv(cars_1_files[4])
+    print(df_merc.head())
+
+    print('=' * 60)
+
+    print("# TOYOTA")
+    df_toyota = pd.read_csv(cars_1_files[5])
+    print(df_toyota.head())
+
+    print('=' * 60)
+
+    # add column for brand of car
+    df_audi['brand'] = 'audi'
+    df_bmw['brand'] = 'bmw'
+    df_ford['brand'] = 'ford'
+    df_hyundi['brand'] = 'hyundi'
+    df_merc['brand'] = 'merc'
+    df_toyota['brand'] = 'toyota'
+
+    # concatenate all dataframes together
+    df_cars_1 = pd.concat(
+        [df_audi, df_bmw, df_ford, df_hyundi, df_merc, df_toyota])
+
+    # change column order to something that allows us to split it easier later on
+    df_cars_1 = df_cars_1[['brand', 'model', 'transmission', 'fuelType',
+                           'year', 'mileage', 'tax', 'mpg', 'engineSize', 'price']]
+
+    df_cars_1
 
 
-# peek at cars 1 datasets
-print('=' * 60)
+def clean_encode_dataset(df_cars_1):
+    cars_1_y = df_cars_1.pop('price').to_numpy()
 
-print("# AUDI")
-df_audi = pd.read_csv(cars_1_files[0])
-print(df_audi.head())
+    cars_1_X = df_cars_1.to_numpy()
 
-print('=' * 60)
+    # temporarily separate categorical cols from numerical
+    num_cols = cars_1_X[:, 4:]
+    cat_cols = cars_1_X[:, :4]
 
-print("# BMW")
-df_bmw = pd.read_csv(cars_1_files[1])
-print(df_bmw.head())
+    print('=' * 60)
+    print("# One-Hot-Encoding")
+    # One-Hot Encode string values
+    enc = OneHotEncoder(sparse=False)
+    cat_cols_enc = enc.fit_transform(cat_cols)
 
-print('=' * 60)
+    cars_1_X_enc = np.hstack((cat_cols_enc, num_cols)).astype(np.float32)
+    print(cars_1_X_enc.shape)
+    print(cars_1_X_enc[:10])
 
-print("# FORD")
-df_ford = pd.read_csv(cars_1_files[2])
-print(df_ford.head())
-
-print('=' * 60)
-
-print("# HYUNDAI")
-df_hyundi = pd.read_csv(cars_1_files[3])
-print(df_hyundi.head())
-
-print('=' * 60)
-
-print("# MERCEDES")
-df_merc = pd.read_csv(cars_1_files[4])
-print(df_merc.head())
-
-print('=' * 60)
-
-print("# TOYOTA")
-df_toyota = pd.read_csv(cars_1_files[5])
-print(df_toyota.head())
-
-print('=' * 60)
+    return cars_1_X_enc, cars_1_y
 
 
-# add column for brand of car
-df_audi['brand'] = 'audi'
-df_bmw['brand'] = 'bmw'
-df_ford['brand'] = 'ford'
-df_hyundi['brand'] = 'hyundi'
-df_merc['brand'] = 'merc'
-df_toyota['brand'] = 'toyota'
+df_cars_1 = read_dataset()
 
-# concatenate all dataframes together
-df_cars_1 = pd.concat(
-    [df_audi, df_bmw, df_ford, df_hyundi, df_merc, df_toyota])
+cars_1_X_enc, cars_1_y = clean_encode_dataset(df_cars_1)
 
-# change column order to something that allows us to split it easier later on
-df_cars_1 = df_cars_1[['brand', 'model', 'transmission', 'fuelType',
-                       'year', 'mileage', 'tax', 'mpg', 'engineSize', 'price']]
-cars_1_y = df_cars_1.pop('price').to_numpy()
-cars_1_X = df_cars_1.to_numpy()
-
-
-# temporarily separate categorical cols from numerical
-num_cols = cars_1_X[:, 4:]
-cat_cols = cars_1_X[:, :4]
-
-print('=' * 60)
-print("# One-Hot-Encoding")
-# One-Hot Encode string values
-enc = OneHotEncoder(sparse=False)
-cat_cols_enc = enc.fit_transform(cat_cols)
-
-cars_1_X_enc = np.hstack((cat_cols_enc, num_cols)).astype(np.float32)
-print(cars_1_X_enc.shape)
-print(cars_1_X_enc[:10])
 
 print('=' * 60)
 
@@ -135,46 +146,6 @@ print(f"X_test shape: {X_test.shape}")
 print(f"X_test shape: {y_test.shape}")
 
 print('=' * 60)
-
-# TODO - try other loss functions and determine best to use
-
-
-"""
-def BaselineModel(optimizer='adam', loss='mean_squared_error',
-                  activation='relu', output_activation='linear',
-                  kernel_initializer='glorot_uniform', bias_initializer='zeros',
-                  input_neurons=150, hidden_neurons=200, num_hidden_layers=2):
-
-    model = Sequential()
-
-    # Define INPUT layer
-    model.add(Dense(input_neurons, input_dim=X_train.shape[1],
-                    activation=activation,
-                    kernel_initializer=kernel_initializer,
-                    bias_initializer=bias_initializer,
-                    name='layer_input'))
-
-    for i in range(num_hidden_layers):
-        model.add(Dense(hidden_neurons, activation=activation,
-                        kernel_initializer=kernel_initializer,
-                        bias_initializer=bias_initializer,
-                        name=f'layer_hidden_{i}'))
-
-    # Define OUTPUT layer
-    model.add(Dense(1, activation=output_activation,
-                    kernel_initializer=kernel_initializer,
-                    bias_initializer=bias_initializer,
-                    name='layer_output'))
-
-    # Compile model
-    model.compile(loss=loss,
-                  optimizer=optimizer,
-                  metrics=[metrics.MeanAbsoluteError(), metrics.MeanSquaredError(), metrics.RootMeanSquaredError()])
-
-    # Print out model summary
-    # print(model.summary())
-    return model
-"""
 
 
 def model_builder(hp):
@@ -209,7 +180,7 @@ def model_builder(hp):
     hp_learning_rate = hp.Choice('learning_rate', values=[1e-2, 1e-3, 1e-4])
 
     # Compile model
-    model.compile(loss=losses.MeanSquaredError(),
+    model.compile(loss=losses.MeanAbsoluteError(),
                   optimizer=tf.keras.optimizers.Adam(
                       learning_rate=hp_learning_rate),
                   metrics=[metrics.MeanAbsoluteError(), metrics.MeanSquaredError(), metrics.RootMeanSquaredError()])
@@ -235,13 +206,13 @@ cb_tensorboard = TensorBoard(log_dir=log_dir, histogram_freq=1)
 
 tuner = kt.Hyperband(model_builder,
                      objective='val_loss',
-                     max_epochs=100,
+                     max_epochs=500,
                      factor=3,
                      directory='models',
                      project_name='car_prices',
                      overwrite=True)
 
-tuner.search(X_train, y_train, epochs=50, validation_split=0.3,
+tuner.search(X_train, y_train, epochs=500, validation_split=0.2,
              callbacks=[cb_early_stopping, cb_tensorboard])
 
 
@@ -342,63 +313,4 @@ tuner/round: 2
 tuner/trial_id: 9bf58eee151b6212ad5a66d0d53bb522
 Score: 17684080.0
 None
-"""
-
-coarse_grid = [
-    {
-        'batch_size': [10, 50, 100, 200, 400],
-        'epochs': [25, 50, 100],
-        'optimizer': ['Adam'],
-        'activation': ['relu'],
-        'num_hidden_layers': [1, 2, 5],
-        'hidden_neurons': [50, 100, 200, 500]
-    }
-]
-
-cross_val = 5
-scores = ['explained_variance', 'max_error', 'r2']
-result = {}
-
-for score in scores:
-    print('-' * 50)
-    print(
-        f"# Tuning hyper-parameters for {score} with {cross_val}-fold cross-validation")
-    print()
-
-    # Employ GridSearch using the cross_val variable on the param grid provided
-    clf = GridSearchCV(
-        KerasRegressor(build_fn=BaselineModel,
-                       batch_size=100, epochs=100),
-        coarse_grid,
-        scoring=score,
-        cv=cross_val,
-        verbose=3
-    )
-    # Fit the model on the training labels and outputs
-
-    clf.fit(X_train, y_train,
-            shuffle=True)
-
-    # clf.fit(X_train, y_train,
-    #         callbacks=[early_stopping],
-    #         verbose=2, shuffle=True,
-    #         workers=2, use_multiprocessing=True)
-
-    print("# Best parameters set found on development set:")
-    print(f'\t{clf.best_params_}')
-    print()
-    result[score] = clf.best_params_
-    print("# Grid scores on development set:")
-    means = clf.cv_results_['mean_test_score']
-    stds = clf.cv_results_['std_test_score']
-    for mean, std, params in zip(means, stds, clf.cv_results_['params']):
-        print("\t - %0.3f (+/-%0.03f) for %r"
-              % (mean, std * 2, params))
-    print()
-
-    print("# Detailed classification report:")
-    print()
-    print("The model is trained on the full development set.")
-    print("The scores are computed on the full evaluation set.")
-    print()
 """
