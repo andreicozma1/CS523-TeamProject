@@ -54,8 +54,7 @@ This milestone is worth 20% of your final project grade. The 20% is calculated l
 ![image](https://user-images.githubusercontent.com/14914491/141645692-e4839239-6a41-4912-9bca-e494b0951f89.png)
 
 ## Overfit
-![image](https://user-images.githubusercontent.com/14914491/141645730-e119f2c0-a3ea-45e0-8160-2caa47443596.png)
-
+![image](https://user-images.githubusercontent.com/14914491/141646124-f4e7700f-5aab-4b00-b09e-38059aba44bf.png)
 
 ## Top 5 Models (By Validation Loss)
 ![image](https://user-images.githubusercontent.com/14914491/141646108-f8f17d08-8fd2-4572-83f2-0854a6647e40.png)
