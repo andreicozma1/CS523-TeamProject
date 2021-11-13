@@ -57,7 +57,7 @@ This milestone is worth 20% of your final project grade. The 20% is calculated l
 ![image](https://user-images.githubusercontent.com/14914491/141645730-e119f2c0-a3ea-45e0-8160-2caa47443596.png)
 
 ## Top 5 Models (By Validation Loss)
-![image](https://user-images.githubusercontent.com/14914491/141646108-f8f17d08-8fd2-4572-83f2-0854a6647e40.png)
+![image](https://user-images.githubusercontent.com/14914491/141646174-1c7c09f4-438e-4b66-9e1a-eb1a0c53aecf.png)
 
 ## Best model (By RMSE)
 ![image](https://user-images.githubusercontent.com/14914491/141645844-36f627e2-e348-4032-97dc-03278e73815d.png)
