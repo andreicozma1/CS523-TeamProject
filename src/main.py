@@ -1,24 +1,21 @@
 # import libraries
-from keras import callbacks
-from keras.wrappers.scikit_learn import KerasRegressor
-from sklearn.model_selection import GridSearchCV
-from keras.callbacks import TensorBoard
-from keras.callbacks import EarlyStopping
-from keras.callbacks import ModelCheckpoint
-from keras.models import Sequential
-from keras.layers import Dense
-from sklearn.model_selection import train_test_split
+
 from os import listdir
 from os.path import isfile, join
 import numpy as np
 import pandas as pd
+
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.model_selection import train_test_split
+
 import tensorflow as tf
-from tensorflow import keras
 import keras_tuner as kt
 
-from sklearn.preprocessing import OneHotEncoder, LabelEncoder
+from keras.models import Sequential
+from keras.layers import Dense
 from keras import metrics
 from keras import losses
+from keras import callbacks
 from keras import optimizers
 
 
@@ -39,14 +36,10 @@ def get_csvs_in_dir(dir_path):
     return [join(dir_path, f) for f in listdir(dir_path) if isfile(join(dir_path, f)) and f.endswith('.csv')]
 
 
-def read_dataset():
+def read_dataset(data_dir):
     # get dataset files
 
-    cars_listing_1_dir = '../datasets/car-listing-1'
-    cars_listing_2_dir = '../datasets/car-listing-2'
-    cars_1_files = get_csvs_in_dir(cars_listing_1_dir)
-    cars_2_files = get_csvs_in_dir(cars_listing_2_dir)
-
+    cars_1_files = get_csvs_in_dir(data_dir)
     # peek at cars 1 datasets
     print('=' * 60)
 
@@ -102,7 +95,7 @@ def read_dataset():
     df_cars_1 = df_cars_1[['brand', 'model', 'transmission', 'fuelType',
                            'year', 'mileage', 'tax', 'mpg', 'engineSize', 'price']]
 
-    df_cars_1
+    return df_cars_1
 
 
 def clean_encode_dataset(df_cars_1):
@@ -127,13 +120,11 @@ def clean_encode_dataset(df_cars_1):
     return cars_1_X_enc, cars_1_y
 
 
-df_cars_1 = read_dataset()
+df_cars_1 = read_dataset('../datasets/car-listing-1')
 
 cars_1_X_enc, cars_1_y = clean_encode_dataset(df_cars_1)
 
-
 print('=' * 60)
-
 
 print('=' * 60)
 print("# Train-Test Split")
@@ -149,7 +140,6 @@ print('=' * 60)
 
 
 def model_builder(hp):
-
     model = Sequential()
 
     hp_kernel_initializer = hp.Choice(
@@ -196,13 +186,11 @@ print('=' * 60)
 checkpoint_name = 'Weights-{epoch:03d}--{val_loss:.5f}.hdf5'
 log_dir = 'tb-logs'
 
-
-cb_checkpoint = ModelCheckpoint(
+cb_checkpoint = callbacks.ModelCheckpoint(
     f'models/{checkpoint_name}', monitor='val_loss', verbose=1, save_best_only=True, mode='auto')
-cb_early_stopping = EarlyStopping(
-    monitor='val_loss', patience=5, verbose=1,  mode='auto')
-cb_tensorboard = TensorBoard(log_dir=log_dir, histogram_freq=1)
-
+cb_early_stopping = callbacks.EarlyStopping(
+    monitor='val_loss', patience=5, verbose=1, mode='auto')
+cb_tensorboard = callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
 
 tuner = kt.Hyperband(model_builder,
                      objective='val_loss',
@@ -215,17 +203,14 @@ tuner = kt.Hyperband(model_builder,
 tuner.search(X_train, y_train, epochs=500, validation_split=0.2,
              callbacks=[cb_early_stopping, cb_tensorboard])
 
-
 print('=' * 60)
 print("# ", end='')
 print(tuner.search_space_summary())
-
 
 print('=' * 60)
 print("# ", end='')
 summary = tuner.results_summary(num_trials=1)
 print(summary)
-
 
 print('=' * 60)
 best_hps = tuner.get_best_hyperparameters(num_trials=1)[0]
