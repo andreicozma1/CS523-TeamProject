@@ -49,3 +49,21 @@ This milestone is worth 20% of your final project grade. The 20% is calculated l
    1. Report articulates all aspects of project effectively. (12.5%)
    2. Report is grammatically and structurally well-written. (2.5%)
 
+# Evaluations
+## Normal/average fit
+![image](https://user-images.githubusercontent.com/14914491/141645692-e4839239-6a41-4912-9bca-e494b0951f89.png)
+
+## Overfit
+![image](https://user-images.githubusercontent.com/14914491/141645730-e119f2c0-a3ea-45e0-8160-2caa47443596.png)
+
+## Top 5 Models (By Validation Loss)
+![image](https://user-images.githubusercontent.com/14914491/141646174-1c7c09f4-438e-4b66-9e1a-eb1a0c53aecf.png)
+
+## Best model (By RMSE)
+![image](https://user-images.githubusercontent.com/14914491/141645844-36f627e2-e348-4032-97dc-03278e73815d.png)
+![image](https://user-images.githubusercontent.com/14914491/141645993-39d2e21c-ca5e-4ae3-9613-21e6236a4eac.png)
+
+## Best model (By MAE)
+![image](https://user-images.githubusercontent.com/14914491/141645880-ff842ee9-8e6f-4ab0-a744-55e9f5507ffd.png)
+![image](https://user-images.githubusercontent.com/14914491/141645967-e162d04a-129d-4f9d-a1a9-7c2ab7027e65.png)
+
