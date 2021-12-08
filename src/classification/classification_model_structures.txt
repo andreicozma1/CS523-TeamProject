@@ -1,0 +1,205 @@
+
+% ============================================================
+%  __  __             _        _   _ 
+% |  \/  |  ___    __| |  ___ | | / |
+% | |\/| | / _ \  / _` | / _ \| | | |
+% | |  | || (_) || (_| ||  __/| | | |
+% |_|  |_| \___/  \__,_| \___||_| |_|
+                                   
+
+% - Optimal Input Layer Activation: tanh
+% - Optimal Kernel Initializer: glorot_uniform
+% - Optimal Learning Rate (Adam): 0.0001
+% - Optimal Number of Hidden Layers: 6
+% 	1. Units: 640	Activation: tanh
+% 	2. Units: 512	Activation: tanh
+% 	3. Units: 1280	Activation: relu
+% 	4. Units: 2048	Activation: tanh
+% 	5. Units: 768	Activation: relu
+% 	6. Units: 896	Activation: tanh
+
+% ============================================================
+%  __  __             _        _   ____  
+% |  \/  |  ___    __| |  ___ | | |___ \ 
+% | |\/| | / _ \  / _` | / _ \| |   __) |
+% | |  | || (_) || (_| ||  __/| |  / __/ 
+% |_|  |_| \___/  \__,_| \___||_| |_____|
+                                       
+
+% - Optimal Input Layer Activation: tanh
+% - Optimal Kernel Initializer: glorot_normal
+% - Optimal Learning Rate (Adam): 0.0001
+% - Optimal Number of Hidden Layers: 9
+% 	1. Units: 384	Activation: tanh
+% 	2. Units: 1152	Activation: tanh
+% 	3. Units: 1664	Activation: tanh
+% 	4. Units: 1920	Activation: relu
+% 	5. Units: 1024	Activation: sigmoid
+% 	6. Units: 640	Activation: relu
+% 	7. Units: 256	Activation: relu
+% 	8. Units: 1152	Activation: relu
+% 	9. Units: 896	Activation: tanh
+
+% ============================================================
+%  __  __             _        _   _____ 
+% |  \/  |  ___    __| |  ___ | | |___ / 
+% | |\/| | / _ \  / _` | / _ \| |   |_ \ 
+% | |  | || (_) || (_| ||  __/| |  ___) |
+% |_|  |_| \___/  \__,_| \___||_| |____/ 
+                                       
+
+% - Optimal Input Layer Activation: tanh
+% - Optimal Kernel Initializer: glorot_normal
+% - Optimal Learning Rate (Adam): 0.0001
+% - Optimal Number of Hidden Layers: 9
+% 	1. Units: 384	Activation: tanh
+% 	2. Units: 1152	Activation: tanh
+% 	3. Units: 1664	Activation: tanh
+% 	4. Units: 1920	Activation: relu
+% 	5. Units: 1024	Activation: sigmoid
+% 	6. Units: 640	Activation: relu
+% 	7. Units: 256	Activation: relu
+% 	8. Units: 1152	Activation: relu
+% 	9. Units: 896	Activation: tanh
+
+% ============================================================
+%  __  __             _        _   _  _   
+% |  \/  |  ___    __| |  ___ | | | || |  
+% | |\/| | / _ \  / _` | / _ \| | | || |_ 
+% | |  | || (_) || (_| ||  __/| | |__   _|
+% |_|  |_| \___/  \__,_| \___||_|    |_|  
+                                        
+
+% - Optimal Input Layer Activation: tanh
+% - Optimal Kernel Initializer: glorot_uniform
+% - Optimal Learning Rate (Adam): 0.0001
+% - Optimal Number of Hidden Layers: 9
+% 	1. Units: 768	Activation: relu
+% 	2. Units: 1920	Activation: relu
+% 	3. Units: 1792	Activation: relu
+% 	4. Units: 896	Activation: relu
+% 	5. Units: 1408	Activation: tanh
+% 	6. Units: 1024	Activation: tanh
+% 	7. Units: 1152	Activation: relu
+% 	8. Units: 1408	Activation: tanh
+% 	9. Units: 1408	Activation: sigmoid
+
+% ============================================================
+%  __  __             _        _   ____  
+% |  \/  |  ___    __| |  ___ | | | ___| 
+% | |\/| | / _ \  / _` | / _ \| | |___ \ 
+% | |  | || (_) || (_| ||  __/| |  ___) |
+% |_|  |_| \___/  \__,_| \___||_| |____/ 
+                                       
+
+% - Optimal Input Layer Activation: sigmoid
+% - Optimal Kernel Initializer: glorot_uniform
+% - Optimal Learning Rate (Adam): 0.0001
+% - Optimal Number of Hidden Layers: 8
+% 	1. Units: 1792	Activation: tanh
+% 	2. Units: 1536	Activation: tanh
+% 	3. Units: 1280	Activation: tanh
+% 	4. Units: 1408	Activation: relu
+% 	5. Units: 512	Activation: relu
+% 	6. Units: 1920	Activation: relu
+% 	7. Units: 1408	Activation: tanh
+% 	8. Units: 640	Activation: relu
+
+% ============================================================
+%  __  __             _        _    __   
+% |  \/  |  ___    __| |  ___ | |  / /_  
+% | |\/| | / _ \  / _` | / _ \| | | '_ \ 
+% | |  | || (_) || (_| ||  __/| | | (_) |
+% |_|  |_| \___/  \__,_| \___||_|  \___/ 
+                                       
+
+% - Optimal Input Layer Activation: sigmoid
+% - Optimal Kernel Initializer: glorot_uniform
+% - Optimal Learning Rate (Adam): 0.0001
+% - Optimal Number of Hidden Layers: 8
+% 	1. Units: 1792	Activation: tanh
+% 	2. Units: 1536	Activation: tanh
+% 	3. Units: 1280	Activation: tanh
+% 	4. Units: 1408	Activation: relu
+% 	5. Units: 512	Activation: relu
+% 	6. Units: 1920	Activation: relu
+% 	7. Units: 1408	Activation: tanh
+% 	8. Units: 640	Activation: relu
+
+% ============================================================
+%  __  __             _        _   _____ 
+% |  \/  |  ___    __| |  ___ | | |___  |
+% | |\/| | / _ \  / _` | / _ \| |    / / 
+% | |  | || (_) || (_| ||  __/| |   / /  
+% |_|  |_| \___/  \__,_| \___||_|  /_/   
+                                       
+
+% - Optimal Input Layer Activation: tanh
+% - Optimal Kernel Initializer: glorot_uniform
+% - Optimal Learning Rate (Adam): 0.0001
+% - Optimal Number of Hidden Layers: 5
+% 	1. Units: 1664	Activation: tanh
+% 	2. Units: 1920	Activation: tanh
+% 	3. Units: 1536	Activation: tanh
+% 	4. Units: 1664	Activation: relu
+% 	5. Units: 1280	Activation: tanh
+
+% ============================================================
+%  __  __             _        _    ___  
+% |  \/  |  ___    __| |  ___ | |  ( _ ) 
+% | |\/| | / _ \  / _` | / _ \| |  / _ \ 
+% | |  | || (_) || (_| ||  __/| | | (_) |
+% |_|  |_| \___/  \__,_| \___||_|  \___/ 
+                                       
+
+% - Optimal Input Layer Activation: tanh
+% - Optimal Kernel Initializer: glorot_uniform
+% - Optimal Learning Rate (Adam): 0.0001
+% - Optimal Number of Hidden Layers: 6
+% 	1. Units: 640	Activation: tanh
+% 	2. Units: 512	Activation: tanh
+% 	3. Units: 1280	Activation: relu
+% 	4. Units: 2048	Activation: tanh
+% 	5. Units: 768	Activation: relu
+% 	6. Units: 896	Activation: tanh
+
+% ============================================================
+%  __  __             _        _    ___  
+% |  \/  |  ___    __| |  ___ | |  / _ \ 
+% | |\/| | / _ \  / _` | / _ \| | | (_) |
+% | |  | || (_) || (_| ||  __/| |  \__, |
+% |_|  |_| \___/  \__,_| \___||_|    /_/ 
+                                       
+
+% - Optimal Input Layer Activation: tanh
+% - Optimal Kernel Initializer: glorot_uniform
+% - Optimal Learning Rate (Adam): 0.0001
+% - Optimal Number of Hidden Layers: 9
+% 	1. Units: 768	Activation: relu
+% 	2. Units: 1920	Activation: relu
+% 	3. Units: 1792	Activation: relu
+% 	4. Units: 896	Activation: relu
+% 	5. Units: 1408	Activation: tanh
+% 	6. Units: 1024	Activation: tanh
+% 	7. Units: 1152	Activation: relu
+% 	8. Units: 1408	Activation: tanh
+% 	9. Units: 1408	Activation: sigmoid
+
+% ============================================================
+%  __  __             _        _   _   ___  
+% |  \/  |  ___    __| |  ___ | | / | / _ \ 
+% | |\/| | / _ \  / _` | / _ \| | | || | | |
+% | |  | || (_) || (_| ||  __/| | | || |_| |
+% |_|  |_| \___/  \__,_| \___||_| |_| \___/ 
+                                          
+
+% - Optimal Input Layer Activation: tanh
+% - Optimal Kernel Initializer: glorot_uniform
+% - Optimal Learning Rate (Adam): 0.0001
+% - Optimal Number of Hidden Layers: 6
+% 	1. Units: 1408	Activation: tanh
+% 	2. Units: 1280	Activation: relu
+% 	3. Units: 512	Activation: tanh
+% 	4. Units: 896	Activation: relu
+% 	5. Units: 384	Activation: tanh
+% 	6. Units: 1664	Activation: relu
